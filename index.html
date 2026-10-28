@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Rosé | Hair Atelier</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#inicio" class="logo">Maison <span>Rosé</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="nav">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="actions">
+      <form id="searchForm" class="search">
+        <input id="searchInput" type="search" placeholder="Buscar produtos..."
+          aria-label="Buscar produtos">
+        <button aria-label="Pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+      <button id="themeToggle" class="icon-button" aria-label="Alternar tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button id="cartButton" class="cart-button">
+        <i class="fa-solid fa-bag-shopping"></i>
+        Carrinho <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="carousel" id="carousel">
+        <article class="slide active"
+          style="--image:url('Galeria/Kit%20capilar%20K%C3%A9rastase.webp')">
+          <div class="slide-content">
+            <p class="eyebrow">MAISON ROSÉ · HAIR ATELIER</p>
+            <h1>O ritual de cuidado que seus fios merecem.</h1>
+            <p>Uma seleção especial para transformar sua rotina capilar em um momento de beleza.</p>
+            <a href="#produtos" class="btn">Descobrir a coleção</a>
+          </div>
+        </article>
+
+        <article class="slide"
+          style="--image:url('Galeria/%C3%93leo%20capilar%20Wella.webp')">
+          <div class="slide-content">
+            <p class="eyebrow">BRILHO DE SALÃO, TODOS OS DIAS</p>
+            <h2>Seu cabelo, no seu melhor.</h2>
+            <p>Fórmulas e cuidados escolhidos para fios cheios de vida.</p>
+            <a href="#produtos" class="btn">Ver os favoritos</a>
+          </div>
+        </article>
+
+        <article class="slide"
+          style="--image:url('Galeria/Truss%20uso%20obrigat%C3%B3rio.webp')">
+          <div class="slide-content">
+            <p class="eyebrow">CUIDADO QUE FAZ A DIFERENÇA</p>
+            <h2>Um carinho a mais para os seus fios.</h2>
+            <p>Encontre o tratamento ideal para acompanhar sua rotina.</p>
+            <a href="#produtos" class="btn">Conhecer produtos</a>
+          </div>
+        </article>
+
+        <article class="slide"
+          style="--image:url('Galeria/M%C3%A1cara%20Hidrata%C3%A7%C3%A3o%20intensa%20K%C3%A9rastase.webp')">
+          <div class="slide-content">
+            <p class="eyebrow">SEU MOMENTO MAISON ROSÉ</p>
+            <h2>Mais brilho. Mais cuidado. Mais você.</h2>
+            <p>Pequenos rituais, resultados que você sente.</p>
+            <a href="#produtos" class="btn">Escolher meu cuidado</a>
+          </div>
+        </article>
+
+        <button class="carousel-arrow prev" id="prevSlide"
+          aria-label="Banner anterior">&#10094;</button>
+        <button class="carousel-arrow next" id="nextSlide"
+          aria-label="Próximo banner">&#10095;</button>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><i class="fa-solid fa-truck-fast"></i>
+        <span><strong>Entrega com carinho</strong><small>Consulte as opções</small></span></div>
+      <div><i class="fa-solid fa-credit-card"></i>
+        <span><strong>Pagamento facilitado</strong><small>Escolha sua forma favorita</small></span></div>
+      <div><i class="fa-solid fa-heart"></i>
+        <span><strong>Curadoria capilar</strong><small>Cuidado para todos os tipos de fio</small></span></div>
+    </section>
+
+    <section class="products section" id="produtos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A CURADORIA MAISON ROSÉ</p>
+          <h2>Seu ritual para fios lindos</h2>
+          <p>Produtos especiais para cuidar, nutrir e finalizar.</p>
+        </div>
+        <span id="resultsCount">4 produtos</span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p id="emptyResults" class="empty" hidden>Nenhum produto encontrado.</p>
+    </section>
+
+    <section class="about" id="sobre">
+      <img src="Galeria/Kit%20capilar%20K%C3%A9rastase.webp"
+        alt="Kit capilar Kérastase Discipline">
+      <div>
+        <p class="eyebrow">BEM-VINDA À MAISON ROSÉ</p>
+        <h2>O cuidado dos seus fios, com um toque especial.</h2>
+        <p>Reunimos tratamentos, finalizadores e acessórios para transformar sua rotina capilar em um ritual de cuidado e autoestima.</p>
+        <a href="#produtos" class="btn">Encontre seu ritual</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="footer-content">
+      <div>
+        <a href="#inicio" class="logo">Maison <span>Rosé</span></a>
+        <p>Um atelier de cuidado capilar feito para você.</p>
+        <div class="socials">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3>Links rápidos</h3>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre nós</a>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p><i class="fa-regular fa-envelope"></i> contato@vittastore.com.br</p>
+        <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+        <p><i class="fa-solid fa-location-dot"></i> São Paulo, SP</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Maison Rosé. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <div id="cartBackdrop" class="backdrop"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-label="Carrinho de compras">
+    <div class="cart-heading">
+      <h2>Seu carrinho</h2>
+      <button id="closeCart" class="icon-button" aria-label="Fechar carrinho">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button id="checkoutButton" class="btn checkout">Finalizar pedido pelo WhatsApp</button>
+      <small>O pagamento não é processado automaticamente neste site.</small>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
