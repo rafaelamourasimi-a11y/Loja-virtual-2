@@ -21,7 +21,8 @@
       <a href="#inicio">Início</a>
       <a href="#produtos">Produtos</a>
       <a href="#categorias">Categorias</a>
-      <a href="#guia">Guia capilar</a>
+      <a href="#tipo-cabelo">Descubra seu tipo de cabelo</a>
+      <a href="#guia-cuidados">Guia de cuidados</a>
       <a href="#escolhas">Escolhas da Rafa</a>
       <a href="#sobre">Sobre a Maison Rosé</a>
       <a href="#contato">Contato</a>
@@ -96,6 +97,94 @@
       </div>
     </section>
 
+    <section class="hair-textures section" id="tipo-cabelo" aria-labelledby="hairTexturesTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">UM GUIA VISUAL, SEM RÓTULOS</p>
+          <h2 id="hairTexturesTitle">Descubra seu tipo de cabelo</h2>
+          <p>Observe como seu cabelo fica ao secar naturalmente, sem escova, chapinha ou modelagem. Compare com as referências abaixo. É comum ter mais de uma textura no mesmo cabelo!</p>
+        </div>
+      </div>
+
+      <div class="hair-texture-grid" aria-label="Referências ilustrativas de texturas de cabelo">
+        <article class="hair-texture-card">
+          <img src="Galeria/Referencia%20cabelo%20liso.png"
+            alt="Referência de fios lisos, sem curvas marcadas."
+            loading="lazy">
+          <div class="hair-texture-info">
+            <h3>Liso <span>· Tipo 1</span></h3>
+            <p>Fios sem curvas marcadas.</p>
+            <button type="button" class="texture-select-button"
+              data-texture-select data-texture="Liso" data-hair-type="Lisos"
+              aria-pressed="false">
+              Meu cabelo se parece com este
+            </button>
+          </div>
+        </article>
+
+        <article class="hair-texture-card">
+          <img src="Galeria/Referencia%20cabelo%20ondulado.png"
+            alt="Referência de fios ondulados, com ondas em formato de S."
+            loading="lazy">
+          <div class="hair-texture-info">
+            <h3>Ondulado <span>· Tipo 2</span></h3>
+            <p>Fios com ondas em formato de S.</p>
+            <button type="button" class="texture-select-button"
+              data-texture-select data-texture="Ondulado" data-hair-type="Ondulados"
+              aria-pressed="false">
+              Meu cabelo se parece com este
+            </button>
+          </div>
+        </article>
+
+        <article class="hair-texture-card">
+          <img src="Galeria/Referencia%20cabelo%20cacheado.png"
+            alt="Referência de fios cacheados, com cachos em espiral."
+            loading="lazy">
+          <div class="hair-texture-info">
+            <h3>Cacheado <span>· Tipo 3</span></h3>
+            <p>Fios com cachos em espiral.</p>
+            <button type="button" class="texture-select-button"
+              data-texture-select data-texture="Cacheado" data-hair-type="Cacheados"
+              aria-pressed="false">
+              Meu cabelo se parece com este
+            </button>
+          </div>
+        </article>
+
+        <article class="hair-texture-card">
+          <img src="Galeria/Referencia%20cabelo%20crespo.png"
+            alt="Referência de fios crespos, com curvas bem fechadas em pequenas espirais."
+            loading="lazy">
+          <div class="hair-texture-info">
+            <h3>Crespo <span>· Tipo 4</span></h3>
+            <p>Fios com curvas bem fechadas, em espirais pequenas ou formato de Z.</p>
+            <button type="button" class="texture-select-button"
+              data-texture-select data-texture="Crespo" data-hair-type="Crespos"
+              aria-pressed="false">
+              Meu cabelo se parece com este
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="hair-texture-note">
+        O formato dos fios é apenas uma parte do cuidado. Oleosidade, ressecamento,
+        espessura e histórico de química também influenciam na escolha dos produtos.
+      </p>
+      <p id="selectedHairTextures" class="selected-textures" role="status" aria-live="polite">
+        Você ainda não selecionou uma textura.
+      </p>
+      <button id="showHairProducts" class="btn hair-products-button" type="button" hidden>
+        Ver produtos para meu cabelo
+      </button>
+      <p class="hair-texture-disclaimer">
+        Esta comparação é apenas uma orientação visual e não identifica com exatidão
+        todas as texturas. A curvatura não indica, por si só, se o cabelo está danificado,
+        oleoso ou grosso.
+      </p>
+    </section>
+
     <section class="products section" id="produtos">
       <div class="section-heading">
         <div>
@@ -103,13 +192,18 @@
           <h2>Seu ritual para fios lindos</h2>
           <p>Explore os produtos e confira os detalhes antes de escolher.</p>
         </div>
-        <span id="resultsCount" aria-live="polite">8 produtos</span>
+        <span id="resultsCount" aria-live="polite">14 produtos</span>
       </div>
+      <p class="price-disclaimer">
+        Esta é uma vitrine demonstrativa. Os valores são preços de referência e podem variar;
+        nenhuma compra é processada neste site. Produtos sem preço confirmado não entram nas
+        faixas de preço.
+      </p>
       <div class="filters" id="categorias" aria-label="Filtros de produtos">
         <label>
-          Categoria
+          Necessidade
           <select id="categoryFilter">
-            <option value="">Todas as categorias</option>
+            <option value="">Todas as necessidades</option>
             <option>Hidratação</option>
             <option>Nutrição</option>
             <option>Reconstrução</option>
@@ -119,7 +213,7 @@
           </select>
         </label>
         <label>
-          Marca
+          Marcas
           <select id="brandFilter">
             <option value="">Todas as marcas</option>
           </select>
@@ -140,13 +234,136 @@
             <option value="">Todos os tipos</option>
           </select>
         </label>
-        <button id="clearFilters" class="clear-filters" type="button">Limpar busca e filtros</button>
+        <button id="clearFilters" class="clear-filters" type="button"
+          title="Limpa a busca e todos os filtros">Limpar filtros</button>
         <p id="hairTypeNote" class="filter-note" hidden></p>
       </div>
       <div class="product-grid" id="productGrid"></div>
       <p id="emptyResults" class="empty" role="status" hidden>
         Nenhum produto corresponde à busca e aos filtros. Ajuste os critérios ou limpe a seleção.
       </p>
+    </section>
+
+    <section class="care-guide section" id="guia-cuidados" aria-labelledby="careGuideTitle">
+      <div class="section-heading care-guide-heading">
+        <div>
+          <p class="eyebrow">INFORMAÇÃO PARA CUIDAR COM CALMA</p>
+          <h2 id="careGuideTitle">Guia de cuidados</h2>
+          <p>Dicas simples para adaptar à sua rotina e às instruções de cada produto.</p>
+        </div>
+      </div>
+
+      <div class="care-guides-grid">
+        <article class="care-tip-card">
+          <div class="care-tip-title">
+            <i class="fa-solid fa-temperature-half" aria-hidden="true"></i>
+            <h3>Proteção térmica</h3>
+          </div>
+          <p class="care-tip-summary">Use o calor com atenção e siga as orientações do produto e do aparelho.</p>
+          <button class="care-tip-toggle" type="button" aria-expanded="false"
+            aria-controls="careTipsHeat" data-guide-toggle>
+            Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="care-tip-content" id="careTipsHeat" hidden>
+            <ul>
+              <li>Um protetor térmico indicado pelo fabricante pode ajudar a reduzir danos causados pelo calor, mas não os elimina.</li>
+              <li>Confira no rótulo a quantidade, como aplicar, se é preciso reaplicar e se o produto deve ser usado nos fios secos ou úmidos.</li>
+              <li>Óleo, sérum ou leave-in não oferece proteção térmica automaticamente: essa função precisa estar indicada pelo fabricante.</li>
+              <li>Antes de usar chapinha ou modelador convencional, deixe os fios totalmente secos. Use a menor temperatura eficaz para o aparelho e para as condições do cabelo; não há uma temperatura única para todos.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="care-tip-card">
+          <div class="care-tip-title">
+            <i class="fa-solid fa-wind" aria-hidden="true"></i>
+            <h3>Controle de frizz</h3>
+          </div>
+          <p class="care-tip-summary">Entenda as diferenças entre tratamento, condicionamento e finalização.</p>
+          <button class="care-tip-toggle" type="button" aria-expanded="false"
+            aria-controls="careTipsFrizz" data-guide-toggle>
+            Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="care-tip-content" id="careTipsFrizz" hidden>
+            <ul>
+              <li>Máscaras são tratamentos de enxágue; condicionadores ajudam no cuidado após a lavagem; finalizadores ficam nos fios para estilizar. O efeito antifrizz só deve ser atribuído quando indicado no rótulo.</li>
+              <li>A cera capilar pode ajudar a alinhar fios arrepiados e finalizar penteados. Use conforme as instruções, sem esperar eliminar todo o frizz.</li>
+              <li>Ao secar, pressione os fios com a toalha em vez de esfregar. Para desembaraçar, vá com delicadeza, começando pelas pontas.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="care-tip-card">
+          <div class="care-tip-title">
+            <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+            <h3>Hidratação, nutrição e reparação</h3>
+          </div>
+          <p class="care-tip-summary">Os nomes ajudam a entender o foco do cuidado, mas os produtos podem ter ações combinadas.</p>
+          <button class="care-tip-toggle" type="button" aria-expanded="false"
+            aria-controls="careTipsNeeds" data-guide-toggle>
+            Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="care-tip-content" id="careTipsNeeds" hidden>
+            <ul>
+              <li><strong>Hidratação:</strong> cuidado com foco em hidratação e maciez dos fios.</li>
+              <li><strong>Nutrição:</strong> cuidado que costuma destacar óleos ou componentes nutritivos na fórmula.</li>
+              <li><strong>Reparação:</strong> cuidado voltado à aparência e ao toque de fios danificados, conforme a proposta do produto.</li>
+              <li>Um mesmo produto pode reunir mais de um benefício. Escolha conforme a necessidade percebida dos fios e as informações do fabricante; não é obrigatório seguir um cronograma fixo.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="care-tip-card">
+          <div class="care-tip-title">
+            <i class="fa-solid fa-jar" aria-hidden="true"></i>
+            <h3>Uso de máscaras</h3>
+          </div>
+          <p class="care-tip-summary">A quantidade e o tempo de pausa corretos são os que constam nas instruções do produto.</p>
+          <button class="care-tip-toggle" type="button" aria-expanded="false"
+            aria-controls="careTipsMasks" data-guide-toggle>
+            Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="care-tip-content" id="careTipsMasks" hidden>
+            <ul>
+              <li>Respeite a quantidade, o modo de aplicação e o tempo de pausa informados na embalagem.</li>
+              <li>Usar mais produto ou deixar agir por mais tempo não garante um resultado melhor e pode contrariar as instruções de uso.</li>
+              <li>A ordem entre máscara e condicionador varia conforme a linha. Siga o rótulo, em vez de presumir uma sequência universal.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="care-tip-card">
+          <div class="care-tip-title">
+            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+            <h3>Cuidados no dia a dia</h3>
+          </div>
+          <p class="care-tip-summary">Pequenos cuidados ajudam a evitar atrito desnecessário. Observe mudanças persistentes no couro cabeludo.</p>
+          <button class="care-tip-toggle" type="button" aria-expanded="false"
+            aria-controls="careTipsDaily" data-guide-toggle>
+            Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="care-tip-content" id="careTipsDaily" hidden>
+            <ul>
+              <li>Desembarace com delicadeza, começando pelas pontas e subindo aos poucos. Evite esfregar os fios com a toalha.</li>
+              <li><strong>Quebra</strong> acontece ao longo do fio, que pode se partir em pedaços. <strong>Queda</strong> é quando fios se desprendem desde a raiz. Essa diferença não permite identificar sozinha a causa de uma mudança capilar.</li>
+              <li>Se a queda for intensa, surgirem falhas ou houver irritação persistente no couro cabeludo, procure um dermatologista.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <aside class="care-sources" aria-label="Fontes e aviso">
+        <h3>Fontes para saber mais</h3>
+        <ul>
+          <li><a href="https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips"
+            target="_blank" rel="noopener noreferrer">American Academy of Dermatology (AAD) — Dicas para cabelos saudáveis</a></li>
+          <li><a href="https://www.aad.org/public/diseases/hair-loss/hair-care"
+            target="_blank" rel="noopener noreferrer">American Academy of Dermatology (AAD) — Cuidados com o cabelo e queda</a></li>
+          <li><a href="https://www.aad.org/public/diseases/hair-loss/causes/hairstyles"
+            target="_blank" rel="noopener noreferrer">American Academy of Dermatology (AAD) — Penteados que tracionam os fios</a></li>
+        </ul>
+        <p>Conteúdo educativo geral, não substitui avaliação dermatológica. Para quantidade, aplicação e alegações de um produto, consulte sempre o fabricante.</p>
+      </aside>
     </section>
 
     <section class="guide section" id="guia">
@@ -185,6 +402,7 @@
       <p class="eyebrow">SELEÇÃO PESSOAL</p>
       <h2>Escolhas da Rafa</h2>
       <p>Este espaço está reservado para favoritos e comentários pessoais enviados pela Rafa. Nenhuma experiência ou avaliação foi publicada ainda.</p>
+      <p class="signature">Com carinho, <strong>Rafaela Simi Moura</strong></p>
     </section>
 
     <section class="about" id="sobre">
@@ -212,7 +430,11 @@
       </div>
       <div>
         <h3>Contato e pedidos</h3>
-        <p>O contato oficial e o número de WhatsApp para pedidos ainda precisam ser informados.</p>
+        <p>Fale com Rafaela Simi Moura pelo WhatsApp:</p>
+        <a class="contact-link" href="https://wa.me/5511940291936"
+          target="_blank" rel="noopener noreferrer">
+          (11) 94029-1936
+        </a>
         <p>Entrega, pagamento e trocas: informações não cadastradas.</p>
       </div>
     </div>
@@ -235,7 +457,7 @@
       <button id="checkoutButton" class="btn checkout" type="button" disabled>
         WhatsApp de pedidos a informar
       </button>
-      <small>Frete e pagamento não são calculados neste site. Informe o WhatsApp oficial para habilitar o envio.</small>
+      <small>O pedido será enviado pelo WhatsApp para confirmação. Frete e pagamento não são calculados neste site.</small>
     </div>
   </aside>
 

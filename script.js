@@ -3,6 +3,7 @@ const products = [
     id: 1,
     name: "Máscara Kérastase Discipline",
     category: "Controle de frizz",
+    productType: "Máscara capilar",
     brand: "Kérastase",
     price: 281.73,
     description: "Máscara da linha Discipline, conforme identificação da embalagem.",
@@ -16,6 +17,7 @@ const products = [
     id: 2,
     name: "Kit Kérastase Discipline: shampoo e máscara",
     category: "Controle de frizz",
+    productType: "Kit capilar",
     brand: "Kérastase",
     price: 546.25,
     description: "Kit da linha Discipline com um shampoo e uma máscara.",
@@ -28,6 +30,7 @@ const products = [
     id: 3,
     name: "Truss Uso Obrigatório",
     category: "Reconstrução",
+    productType: "Leave-in",
     brand: "TRUSS",
     price: 99.90,
     description: "Leave-in reconstrutor TRUSS Uso Obrigatório.",
@@ -40,6 +43,7 @@ const products = [
     id: 4,
     name: "Finalizador em Barra Dream Curly",
     category: "Finalização",
+    productType: "Barra finalizadora",
     brand: "B.Hulmann",
     price: 94.05,
     description: "Barra ativadora 2 em 1 Dream Curly.",
@@ -52,7 +56,8 @@ const products = [
     id: 5,
     name: "Condicionador NutriOil",
     category: "Nutrição",
-    brand: "L'Oréal Professionnel",
+    productType: "Condicionador",
+    brand: "L’Oréal Professionnel",
     price: 377.99,
     description: "Condicionador NutriOil, conforme identificação da embalagem.",
     image: "Galeria/M%C3%A1scara%20NutriOil.jpeg",
@@ -64,6 +69,7 @@ const products = [
     id: 6,
     name: "Escova Tangle Teezer",
     category: "Acessórios",
+    productType: "Escova",
     brand: "Tangle Teezer",
     price: 94.41,
     description: "Escova desembaraçadora Tangle Teezer.",
@@ -77,7 +83,8 @@ const products = [
     id: 7,
     name: "Óleo capilar Wella Oil Reflections",
     category: "Nutrição",
-    brand: "Wella",
+    productType: "Óleo capilar",
+    brand: "Wella Professionals",
     price: 129.90,
     description: "Óleo capilar Wella Oil Reflections.",
     image: "Galeria/%C3%93leo%20capilar%20Wella.webp",
@@ -89,11 +96,90 @@ const products = [
     id: 8,
     name: "Máscara Acidificante Amend Essential",
     category: "",
+    productType: "Máscara acidificante",
     brand: "Amend",
     price: 39.90,
     description: "Máscara acidificante para equilíbrio do pH, conforme a embalagem.",
     image: "Galeria/Acidificante%20capilar.webp",
     size: "250 g",
+    indication: "",
+    usage: ""
+  },
+  {
+    id: 9,
+    name: "Cera Antifrizz Dream Curly",
+    category: "Controle de frizz",
+    categories: ["Controle de frizz", "Finalização"],
+    productType: "Cera finalizadora",
+    brand: "B.Hulmann",
+    price: null,
+    description: "Cera capilar antifrizz da linha Dream Curly.",
+    image: "Galeria/Cera%20Capilar%20Finalizadora%20Antifrizz.webp",
+    size: "20 g",
+    indication: "",
+    usage: ""
+  },
+  {
+    id: 10,
+    name: "Escova polvo desembaraçadora",
+    category: "Acessórios",
+    productType: "Escova",
+    brand: "",
+    price: null,
+    description: "Escova de cabelo modelo polvo; a marca não está identificada na imagem.",
+    image: "Galeria/Escova%20polvo.webp",
+    indication: "",
+    usage: ""
+  },
+  {
+    id: 11,
+    name: "Máscara Wella Professionals Oil Reflections Luminous Reboost",
+    category: "Nutrição",
+    productType: "Máscara capilar",
+    brand: "Wella Professionals",
+    price: 142.90,
+    description: "Máscara Luminous Reboost da linha Oil Reflections.",
+    image: "Galeria/M%C3%A1scara%20de%20Hidrata%C3%A7%C3%A3o%20Oil%20Reflections.jpeg",
+    size: "500 ml",
+    indication: "",
+    usage: ""
+  },
+  {
+    id: 12,
+    name: "Máscara Siàge Reconstrói os Fios 4D",
+    category: "Reconstrução",
+    productType: "Máscara capilar",
+    brand: "Eudora",
+    price: 66.40,
+    description: "Máscara de reconstrução intensiva para cabelos danificados.",
+    image: "Galeria/M%C3%A1scara%20de%20reconstru%C3%A7%C3%A3o%20Si%C3%A1ge.png",
+    size: "250 g",
+    indication: "Cabelos danificados, conforme a embalagem.",
+    usage: ""
+  },
+  {
+    id: 13,
+    name: "Leave-in Braé Divine Absolutely Smooth Ten In One",
+    category: "Finalização",
+    productType: "Leave-in",
+    brand: "Braé",
+    price: 125.57,
+    description: "Leave-in da linha Divine Absolutely Smooth Ten In One.",
+    image: "Galeria/Protetor%20t%C3%A9rmico%20bra%C3%A9.webp",
+    size: "200 g",
+    indication: "Cabelos danificados, conforme a embalagem.",
+    usage: ""
+  },
+  {
+    id: 14,
+    name: "Revlon Professional Uniq One All In One Hair Treatment",
+    category: "Finalização",
+    productType: "Tratamento em spray",
+    brand: "Revlon Professional",
+    price: null,
+    description: "Tratamento capilar Uniq One All In One.",
+    image: "Galeria/Protetor%20t%C3%A9rmico%20Revlon.jpeg",
+    size: "150 ml",
     indication: "",
     usage: ""
   }
@@ -105,13 +191,21 @@ let cart = [];
 let toastTimer;
 let currentSlide = 0;
 let carouselTimer;
-const whatsappNumber = "";
+const whatsappNumber = "5511940291936";
+const selectedHairTextures = new Map();
+let recommendationHairTypes = null;
 
 const formatPrice = value =>
   value.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   });
+
+const hasReferencePrice = product =>
+  typeof product.price === "number" && Number.isFinite(product.price);
+
+const getProductCategories = product =>
+  product.categories || (product.category ? [product.category] : []);
 
 // MOSTRAR PRODUTOS
 
@@ -122,28 +216,52 @@ function renderProducts() {
   const hairType = $("hairTypeFilter").value;
   const priceRange = $("priceFilter").value;
 
+  document.querySelectorAll(".filters label").forEach(label => {
+    const select = label.querySelector("select");
+    label.classList.toggle("is-selected", Boolean(select && select.value));
+  });
+
   const filtered = products.filter(product => {
-    const matchesQuery =
-      `${product.name} ${product.brand} ${product.category} ${product.description}`
-        .toLocaleLowerCase("pt-BR")
-        .includes(query);
-    const matchesCategory = !category || product.category === category;
+    const searchableText =
+      `${product.name} ${product.brand} ${product.productType || ""} ` +
+      `${getProductCategories(product).join(" ")} ${product.description}`
+        .toLocaleLowerCase("pt-BR");
+    const matchesQuery = searchableText.includes(query);
+    const matchesCategory =
+      !category || getProductCategories(product).includes(category);
     const matchesBrand = !brand || product.brand === brand;
     const matchesHairType =
       !hairType || (product.hairTypes || []).includes(hairType);
+    const matchesHairRecommendation =
+      !recommendationHairTypes ||
+      recommendationHairTypes.some(type => (product.hairTypes || []).includes(type));
     const [minimum, maximum] = priceRange.split("-");
     const matchesPrice = !priceRange ||
-      (product.price >= Number(minimum) &&
+      (hasReferencePrice(product) &&
+        product.price >= Number(minimum) &&
         (!maximum || product.price <= Number(maximum)));
 
     return matchesQuery && matchesCategory && matchesBrand &&
-      matchesHairType && matchesPrice;
+      matchesHairType && matchesHairRecommendation && matchesPrice;
   });
 
   $("resultsCount").textContent =
     `${filtered.length} ${filtered.length === 1 ? "produto encontrado" : "produtos encontrados"}`;
 
-  $("emptyResults").hidden = filtered.length > 0;
+  const emptyResults = $("emptyResults");
+  emptyResults.hidden = filtered.length > 0;
+  if (!filtered.length && recommendationHairTypes) {
+    const matchingProducts = products.some(product =>
+      recommendationHairTypes.some(type => (product.hairTypes || []).includes(type))
+    );
+    const selectedNames = [...selectedHairTextures.keys()].join(", ");
+    emptyResults.textContent = matchingProducts
+      ? "Nenhum produto corresponde aos filtros atuais para as texturas selecionadas. Ajuste os filtros ou limpe a seleção."
+      : `Ainda não há produtos no catálogo com indicação registrada para ${selectedNames}.`;
+  } else {
+    emptyResults.textContent =
+      "Nenhum produto corresponde à busca e aos filtros. Ajuste os critérios ou limpe a seleção.";
+  }
 
   $("productGrid").innerHTML = filtered.map(product => `
     <article class="product-card">
@@ -158,15 +276,28 @@ function renderProducts() {
       </div>
 
       <div class="product-info">
-        <span class="product-category">${product.category || "Categoria a confirmar"}</span>
+        <span class="product-category">
+          ${product.productType ? `${product.productType} · ` : ""}
+          ${getProductCategories(product).join(" · ") || "Categoria a confirmar"}
+        </span>
         <h3>${product.name}</h3>
         <p class="product-description">${product.description}</p>
 
         <div class="product-bottom">
-          <span class="product-price">${formatPrice(product.price)}</span>
+          <div class="product-price-block">
+            <span class="product-price">
+              ${hasReferencePrice(product) ? formatPrice(product.price) : "Preço pendente"}
+            </span>
+            <small class="price-note">
+              ${hasReferencePrice(product) ? "Preço de referência" : "Valor a confirmar"}
+            </small>
+          </div>
           <div class="product-actions">
             <button class="details-button" type="button" data-details="${product.id}">Detalhes</button>
-            <button class="add-button" type="button" data-add="${product.id}">Adicionar</button>
+            <button class="add-button" type="button" data-add="${product.id}"
+              ${hasReferencePrice(product) ? "" : "disabled aria-label=\"Preço pendente; adição ao carrinho indisponível\""}>
+              ${hasReferencePrice(product) ? "Adicionar" : "Preço pendente"}
+            </button>
           </div>
         </div>
       </div>
@@ -175,7 +306,7 @@ function renderProducts() {
 }
 
 function populateFilters() {
-  const brands = [...new Set(products.map(product => product.brand))]
+  const brands = [...new Set(products.map(product => product.brand).filter(Boolean))]
     .sort((first, second) => first.localeCompare(second, "pt-BR"));
   const hairTypes = [...new Set(products.flatMap(product => product.hairTypes || []))]
     .sort((first, second) => first.localeCompare(second, "pt-BR"));
@@ -208,10 +339,13 @@ function renderProductDetails(id) {
 
   $("dialogTitle").textContent = product.name;
   $("productDetails").innerHTML = `
-    <p class="detail-price">${formatPrice(product.price)}</p>
+    <p class="detail-price">
+      ${hasReferencePrice(product) ? formatPrice(product.price) : "Preço de referência a confirmar."}
+    </p>
     <dl>
-      ${detail("Marca", product.brand)}
-      ${detail("Categoria", product.category || "A confirmar")}
+      ${detail("Marca", product.brand || "Não identificada na imagem.")}
+      ${detail("Tipo de produto", product.productType)}
+      ${detail("Categoria(s)", getProductCategories(product).join(", ") || "A confirmar")}
       ${product.size ? detail("Volume ou peso", product.size) : ""}
       ${detail("Indicação", product.indication)}
       ${detail("Modo de usar", product.usage)}
@@ -239,6 +373,10 @@ function showToast(message) {
 function addToCart(id) {
   const product = products.find(item => item.id === id);
   if (!product) return;
+  if (!hasReferencePrice(product)) {
+    showToast("O preço deste produto ainda precisa ser confirmado.");
+    return;
+  }
 
   const existing = cart.find(item => item.id === id);
 
@@ -385,6 +523,7 @@ $("searchForm").addEventListener("submit", event => {
   });
 
 $("clearFilters").addEventListener("click", () => {
+  recommendationHairTypes = null;
   $("searchInput").value = "";
   $("categoryFilter").value = "";
   $("brandFilter").value = "";
@@ -394,10 +533,75 @@ $("clearFilters").addEventListener("click", () => {
   $("searchInput").focus();
 });
 
+function updateSelectedHairTextures() {
+  document.querySelectorAll("[data-texture-select]").forEach(button => {
+    const selected = selectedHairTextures.has(button.dataset.texture);
+    button.setAttribute("aria-pressed", String(selected));
+    button.closest(".hair-texture-card").classList.toggle("is-selected", selected);
+  });
+
+  const selectedNames = [...selectedHairTextures.keys()];
+  $("selectedHairTextures").textContent = selectedNames.length
+    ? `Texturas selecionadas: ${selectedNames.join(", ")}. Você pode escolher mais de uma.`
+    : "Você ainda não selecionou uma textura.";
+  $("showHairProducts").hidden = selectedNames.length === 0;
+  recommendationHairTypes = null;
+  renderProducts();
+}
+
+document.querySelectorAll("[data-texture-select]").forEach(button => {
+  button.addEventListener("click", () => {
+    const texture = button.dataset.texture;
+    if (selectedHairTextures.has(texture)) {
+      selectedHairTextures.delete(texture);
+    } else {
+      selectedHairTextures.set(texture, button.dataset.hairType);
+    }
+
+    updateSelectedHairTextures();
+  });
+});
+
+$("showHairProducts").addEventListener("click", () => {
+  recommendationHairTypes = [...new Set(selectedHairTextures.values())];
+  $("hairTypeFilter").value = "";
+  renderProducts();
+  $("produtos").scrollIntoView({ behavior: "smooth" });
+});
+
 document.querySelectorAll("[data-category-link]").forEach(link => {
   link.addEventListener("click", () => {
     $("categoryFilter").value = link.dataset.categoryLink;
     renderProducts();
+  });
+});
+
+document.querySelectorAll("[data-guide-toggle]").forEach(button => {
+  button.addEventListener("click", () => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    document.querySelectorAll("[data-guide-toggle]").forEach(toggle => {
+      const panel = $(toggle.getAttribute("aria-controls"));
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML =
+        'Ver dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+      panel.hidden = true;
+    });
+
+    if (!isExpanded) {
+      const panel = $(button.getAttribute("aria-controls"));
+      button.setAttribute("aria-expanded", "true");
+      button.innerHTML =
+        'Fechar dicas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+      panel.hidden = false;
+    }
+  });
+
+  button.addEventListener("keydown", event => {
+    if ((event.key === "Enter" || event.key === " ") && !event.repeat) {
+      event.preventDefault();
+      button.click();
+    }
   });
 });
 
